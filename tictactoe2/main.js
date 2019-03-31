@@ -134,6 +134,18 @@ if(turn == "X"){
     // }
     if(aiMoves == 1){
         aiMove(r3, c3);
+        for(let i = 0; i < N_SIZE; i++){
+            for(let j = 0; j < N_SIZE; j++){
+                if(!(i == 0 || j == 0 || i == N_SIZE - 1 || j == N_SIZE - 1 )){
+                    document.getElementById("r"+ i + "c" + j).removeEventListener("click", set);
+                }
+        
+                if((i == 0 || j == 0 || i == N_SIZE - 1 || j == N_SIZE - 1 )){
+                    document.getElementById("r"+ i + "c" + j).removeEventListener("hello", set);
+                }
+            }
+        }
+      
     }
     if(aiMoves == 0){
         if(r2 == r && c2 == c){
